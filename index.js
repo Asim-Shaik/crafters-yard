@@ -6,13 +6,15 @@ import connectDB from "./db/connect.js";
 import products from "./routes/products.js";
 import login from "./routes/login.js";
 import user from "./routes/user.js";
+import order from "./routes/orders.js";
+import cart from "./routes/cart.js";
 import shop from "./routes/shop.js";
 import cat from "./routes/category.js";
 import multer from "multer";
 import path from "path";
 import { fileURLToPath } from "url";
-dotenv.config();
 app.use(express.json());
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -36,6 +38,8 @@ app.use("/api/user", user);
 app.use("/api/login", login);
 app.use("/api/shop", shop);
 app.use("/api/category", cat);
+app.use("/api/orders", order);
+app.use("/api/cart", cart);
 
 const port = process.env.PORT || 5000;
 
