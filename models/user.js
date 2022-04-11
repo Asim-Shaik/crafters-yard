@@ -16,10 +16,10 @@ const UserSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
-    isAdmin: {
-      type: Boolean,
-      default: false,
-    },
+    orders:{
+      type:Object,
+      trim:true
+    }
   },
   { timestamps: true }
 );

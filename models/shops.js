@@ -16,6 +16,10 @@ const shopSchema = new mongoose.Schema(
     category: {
       type: Array,
     },
+    orders: {
+      type: Object,
+      trim: true,
+    },
   },
   { timestamps: true }
 );

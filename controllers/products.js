@@ -2,17 +2,13 @@ import Product from "../models/products.js";
 
 export const getProduct = async (req, res) => {
   const shopname = req.query.shop;
-  const catname = req.query.cat;
+  const category = req.query.cat;
   try {
     let products;
     if (shopname) {
       products = await Product.find({ shopname });
-    } else if (catname) {
-      products = await Product.find({
-        categories: {
-          $in: [catname],
-        },
-      });
+    } else if (category) {
+      products = await Product.find({ category });
     } else {
       products = await Product.find({});
     }

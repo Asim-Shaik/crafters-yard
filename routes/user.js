@@ -14,10 +14,6 @@ import {
 const routerUser = express.Router();
 
 routerUser.route("/").post(createUser);
-routerUser
-  .route("/:id")
-  .get(getUser)
-  .delete(deleteUser)
-  .patch(verifyTokenAuthorization, updateUser);
+routerUser.route("/:id").get(getUser).delete(deleteUser).patch(updateUser);
 
 export default routerUser;
